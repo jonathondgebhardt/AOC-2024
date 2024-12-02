@@ -20,8 +20,7 @@ namespace util
         return result;
     }
 
-    template <class T>
-    std::vector<T> ContainerTo(const std::vector<std::string>& x)
+    template <class T> std::vector<T> ContainerTo(const std::vector<std::string>& x)
     {
         std::vector<T> converted;
         for(const auto& item : x)
@@ -32,5 +31,6 @@ namespace util
         return converted;
     }
 
-    std::vector<std::string> Split(const std::string& x, char delimiter = ' ');
+    std::vector<std::string> Split(const std::string& x, char delimiter = ' ',
+                                   bool compress = true);
 }

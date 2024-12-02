@@ -32,7 +32,8 @@ std::vector<std::string> util::Parse(const std::string& x)
     return contents;
 }
 
-std::vector<std::string> util::Split(const std::string& x, char delimiter)
+std::vector<std::string> util::Split(const std::string& x, const char delimiter,
+                                     const bool compress)
 {
     std::vector<std::string> tokens;
 
@@ -40,6 +41,11 @@ std::vector<std::string> util::Split(const std::string& x, char delimiter)
     std::string s;
     while(std::getline(ss, s, delimiter))
     {
+        if(compress && tokens.empty())
+        {
+            continue;
+        }
+
         tokens.push_back(s);
     }
 
