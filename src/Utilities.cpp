@@ -41,7 +41,7 @@ std::vector<std::string> util::Split(const std::string& x, const char delimiter,
     std::string s;
     while(std::getline(ss, s, delimiter))
     {
-        if(compress && tokens.empty())
+        if(compress && s.empty())
         {
             continue;
         }
